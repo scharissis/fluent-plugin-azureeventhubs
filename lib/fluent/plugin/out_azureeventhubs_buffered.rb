@@ -82,7 +82,7 @@ module Fluent::Plugin
       }
 
       records.each_slice(@max_batch_size).each { |batch|
-        @sender.send_w_properties(batch, @message_properties)
+        @sender.send_w_properties(batch, headers)
       }
     end
 
