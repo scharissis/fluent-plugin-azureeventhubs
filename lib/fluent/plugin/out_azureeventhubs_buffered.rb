@@ -64,7 +64,13 @@ module Fluent::Plugin
       }
     end
 
+    # https://docs.microsoft.com/en-us/rest/api/eventhub/send-batch-events
     def write_batched(chunk)
+      headers = { 'Content-Type' => 'application/vnd.microsoft.servicebus.json' }
+      if not @message_properties.nil?
+        headers = headers.merge(@message_properties)
+      end
+
       records = []
       chunk.msgpack_each { |tag, time, record|
         if @print_records
