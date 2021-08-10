@@ -1,4 +1,4 @@
-Copyright (c) 2014 Hidemasa Togashi
+Copyright (c) 2021 Stefano Charissis
 
 MIT License
 
