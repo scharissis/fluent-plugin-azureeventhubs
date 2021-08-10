@@ -1,6 +1,6 @@
 
 class AzureEventHubsHttpSender
-  def initialize(connection_string, hub_name, expiry=3600,proxy_addr='',proxy_port=3128,open_timeout=60,read_timeout=60)
+  def initialize(connection_string, hub_name, expiry=3600, proxy_addr='', proxy_port=3128, open_timeout=60, read_timeout=60)
     require 'openssl'
     require 'base64'
     require 'net/http'
